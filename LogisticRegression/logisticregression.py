@@ -163,18 +163,17 @@ def countZeroOneError(hypothesis, trainLabel):
             count += 1
     return count
 
-
-dataPath = r"C:\Users\DongXiaoning\Downloads\Algorithms in Machine Learning Foundation and Techniques\LogisticRegression\heart.dat"
-dataSet = genfromtxt(dataPath, delimiter=' ')
-trainData, trainLabel = getData(dataSet)
-m, n = np.shape(trainData)
-w = np.ones(n)
-alpha = 0.005
-maxIteration = 4000000
-w, gradient = stochasticGradientDescent2(
-    trainData, trainLabel, w, alpha, maxIteration)
-hypothesis = predict(trainData, w)
-print("\n")
-print("Final w's value is: ", w)
-print("Final gradient is: ", gradient)
-print("Final zero-one error is: ", countZeroOneError(hypothesis, trainLabel))
+if __name__ == '__main__':
+    dataPath = r"C:\Users\DongXiaoning\Downloads\Algorithms in Machine Learning Foundation and Techniques\LogisticRegression\heart.dat"
+    dataSet = genfromtxt(dataPath, delimiter=' ')
+    trainData, trainLabel = getData(dataSet)
+    m, n = np.shape(trainData)
+    w = np.ones(n)
+    alpha = 0.005
+    maxIteration = 4000000
+    w, gradient = stochasticGradientDescent2(trainData, trainLabel, w, alpha, maxIteration)
+    hypothesis = predict(trainData, w)
+    print("\n")
+    print("Final w's value is: ", w)
+    print("Final gradient is: ", gradient)
+    print("Final zero-one error is: ", countZeroOneError(hypothesis, trainLabel))

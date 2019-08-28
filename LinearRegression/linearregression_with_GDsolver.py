@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Aug 14 23:47:36 2019
 
 @author: DongXiaoning
 """
@@ -42,6 +41,7 @@ def predict(x, theta):
 
 
 dataPath = r"C:\Users\DongXiaoning\Downloads\Algorithms in Machine Learning Foundation and Techniques\LinearRegression\house.csv"
+# dataPath = r"\\192.168.1.18\Users\DongXiaoning\Downloads\Algorithms in Machine Learning Foundation and Techniques\LinearRegression\house.csv"
 dataSet = genfromtxt(dataPath, delimiter=',')
 trainData, trainLabel = getData(dataSet)
 m, n = np.shape(trainData)
