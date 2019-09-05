@@ -103,10 +103,10 @@ if __name__ == '__main__':
     proportion = np.array(list(dict_label.values())) / m
     gini_group = 1 - np.dot(proportion,proportion)
 # compute gini index of splited data(i.e. two groups)
-    Gini_index_dict = {}
+    gini_index_dict = {}
     for i in range(m):    # 这只是自上而下一行行地split。理论上你可以随意shuffle,split--->所以有 C(m,0) + C(m,1) + C(m,2) +...+ C(m,m-1) + C(m,m)种split
         gini_index = compute_gini(breast_data,breast_label,i)
-        Gini_index_dict[i] = gini_index
-    least_gini_index,least_gini_value = min(Gini_index_dict.items(),key=operator.itemgetter(1))
+        gini_index_dict[i] = gini_index
+    least_gini_index,least_gini_value = min(gini_index_dict.items(),key=operator.itemgetter(1))
     largest_info_gain = gini_group - least_gini_value
     print(f'largest info gain is: {largest_info_gain}, index is: {least_gini_index}')
