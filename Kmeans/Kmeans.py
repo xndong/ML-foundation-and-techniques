@@ -45,7 +45,7 @@ def compute_distance(center,point,distance_metric='euclidean'):
 def euclidean_distance(point_x,point_y):
     vector = np.subtract(point_x,point_y)
     distance = np.dot(vector,vector)
-    return distance
+    return np.sqrt(distance)
     
 def manhattan_distance(point_x,point_y):
     vector = np.subtract(point_x,point_y)
